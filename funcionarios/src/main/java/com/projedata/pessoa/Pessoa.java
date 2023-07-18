@@ -1,4 +1,4 @@
-package com.projedata;
+package com.projedata.pessoa;
 
 import java.time.LocalDate;
 

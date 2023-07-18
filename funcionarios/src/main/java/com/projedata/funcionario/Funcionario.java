@@ -1,10 +1,12 @@
-package com.projedata;
+package com.projedata.funcionario;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+
+import com.projedata.pessoa.Pessoa;
 
 public class Funcionario extends Pessoa {
   private BigDecimal salario;
