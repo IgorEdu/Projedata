@@ -23,7 +23,7 @@ public class Principal {
 
         imprimirTodosFuncionarios(funcionarios);
 
-        aumentaSalarioDeTodosFuncionariosPorPercentual(funcionarios, 10);
+        AumentoSalario.aumentaSalarioDeTodosFuncionariosPorPercentual(funcionarios, 10);
 
         Map<String, List<Funcionario>> funcionariosAgrupadoPorFuncao = agruparFuncionariosPorFuncao(funcionarios);
 
@@ -128,17 +128,6 @@ public class Principal {
         Map<String, List<Funcionario>> funcoes = funcionarios.stream()
                 .collect(Collectors.groupingBy(Funcionario::getFuncao));
         return funcoes;
-    }
-
-    private static void aumentaSalarioDeTodosFuncionariosPorPercentual(List<Funcionario> funcionarios,
-            double percentualAumento) {
-        for (int i = 0; i < funcionarios.size(); i++) {
-            BigDecimal salarioOriginal = funcionarios.get(i).getSalario();
-            BigDecimal aumento = salarioOriginal.multiply(new BigDecimal(percentualAumento))
-                    .divide(new BigDecimal("100"));
-            BigDecimal novoSalario = salarioOriginal.add(aumento);
-            funcionarios.get(i).setSalario(novoSalario);
-        }
     }
 
     private static void imprimirTodosFuncionarios(List<Funcionario> funcionarios) {
