@@ -104,10 +104,15 @@ public class Principal {
             }
         }
 
-        System.out.println("Aniversariantes do mês " + nomeMes + ":");
-        for (Funcionario funcionario : aniversariantes) {
-            System.out.println(funcionario);
+        System.out.println("Aniversariantes do mês de " + nomeMes + ":");
+        if (aniversariantes.size() > 0) {
+            for (Funcionario funcionario : aniversariantes) {
+                System.out.println(funcionario);
+            }
+        } else {
+            System.out.println("Não possuí aniversariantes no mes de " + nomeMes);
         }
+
         System.out.println();
     }
 
@@ -155,6 +160,7 @@ public class Principal {
         if (cont == 0) {
             System.out.println("Nenhum funcionário com nome " + nome + " encontrado.");
         }
+        System.out.println();
     }
 
     public static List<Funcionario> cadastraFuncionarios() {
@@ -170,7 +176,7 @@ public class Principal {
         funcionarios.add(new Funcionario("Arthur", LocalDate.of(1993, 03, 31), new BigDecimal(4071.84), "Contador"));
         funcionarios.add(new Funcionario("Laura", LocalDate.of(1994, 07, 8), new BigDecimal(3017.45), "Gerente"));
         funcionarios.add(new Funcionario("Heloísa", LocalDate.of(2003, 05, 24), new BigDecimal(1606.85),
-                "Eletrícista"));
+                "Eletricista"));
         funcionarios.add(new Funcionario("Helena", LocalDate.of(1996, 9, 02), new BigDecimal(2799.93), "Gerente"));
 
         return funcionarios;
